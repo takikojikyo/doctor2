@@ -11,54 +11,6 @@ $(window).on('scroll', function() {
 
 
 
-function sliderSetting(){
-  if(window.innerWidth <= 960){
-    if(!$('.slick-box').hasClass('slick-initialized')){
-      $('.slick-box').slick({
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 2,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        arrows: false,
-        dots: true,
-        responsive: [
-          {
-            breakpoint: 500,
-            settings: {
-              slidesToShow: 1,
-              centerPadding: '0%'
-            }
-          },
-          {
-            breakpoint: 750,
-            settings: {
-              slidesToShow: 1,
-              centerPadding: '50px'
-            }
-          },
-          {
-            breakpoint: 850,
-            settings: {
-              slidesToShow: 2,
-              centerPadding: '0%'
-            }
-          }
-        ]
-      });
-    }
-  } else {
-    if($('.slick-box').hasClass('slick-initialized')){
-      $('.slick-box').slick('unslick'); // スライダー解除
-    }
-  }
-}
-
-$(window).on('load resize', function(){
-  sliderSetting();
-});
-
-
 
 // スクロール時のイベント
 $(window).scroll(function () {
